@@ -1,0 +1,199 @@
+//================
+// main SCSS File
+//================
+@import "components/variables";
+@import "components/fonts";
+@import "components/popup";
+@import "responsive";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    padding: 50px;
+}
+
+.container {
+    max-width: 1680px;
+    margin: 0 auto;
+}
+.capability-card-section {
+    max-width: 100%;
+}
+.capability-card-header {
+    display: flex;
+    justify-content: space-around;
+    // align-items: center;
+    // padding: 50px 0px;
+
+    .title {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: $secondary-color;
+    }
+    .small-title {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 40px;
+        color: $primary-color;
+    }
+}
+.card-section-description{
+    .title {
+        text-transform: lowercase;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 28px;
+        color: $black-color;
+        font-family: 'Nunito', sans-serif;
+    }
+}
+.card-wrapper{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 1600px;
+    box-shadow: 0px 8px 24px 0 rgba(25, 26, 27, .1);
+    
+    .single-card {
+        width: 368px;
+        position: relative;
+        overflow: hidden;
+        backface-visibility: hidden;
+        clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%);
+
+        .icon-box {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $primary-color;
+            width: 100%;
+            height: 100%;
+
+            img {
+                margin-top: -80px;
+            }
+        }
+        .image-box {
+            transition: all 0.10s;
+
+            .card-image {
+                width: 100%;
+                height: 500px;
+                margin: 0 auto;
+                display: block;
+                object-fit: cover;
+                object-position: center;
+                transform-origin: center;
+                transition: all 0.4s;
+            }
+        }
+        .card-info{
+            min-height: 170px;
+            position: absolute;
+            bottom: -120px;
+            padding: 14px;
+            opacity: 1;
+            overflow-y: auto;
+            background-color: #fff;
+            transition: all 0.4s;
+
+            .title{
+                margin-left: 22px;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 24px;
+                padding: 0px 0px 20px;
+            }
+            .card-description {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+                line-height: 1.5;
+                width: 93%;
+            }
+        }
+        /*&:last-child {
+            clip-path: none;
+        }*/
+        &:hover .card-image {
+            margin-top: 0px;
+        }
+        &:hover .card-info {
+            opacity: 1;
+            visibility: visible;
+            bottom: 0px;
+            height: 45%;
+            transition: all 0.3s;
+        }
+        &:hover .icon-box {
+            opacity: 0;
+        }
+        &:hover .icon-box, &:hover .card-info{
+            padding-left: 55px;
+        }
+        &:nth-child(1):hover .icon-box,
+        &:nth-child(1):hover .card-info {
+            padding-left: 20px;
+        }
+        &:hover  .title{
+            margin-left: 0px;
+        }
+    }
+}
+
+.black-bg-color {
+    background-color: $box-black-color !important;
+}
+.learn-more-button {
+    position: relative;
+    line-height: 24px;
+    color: #f2b760;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    // font-size: 18px;
+}
+
+.top-left-radius{
+    border-top-left-radius: 10px;
+}
+.top-right-radius{
+    border-top-right-radius: 10px;
+}
+.bottom-left-radius{
+    border-bottom-left-radius: 10px;
+}
+.bottom-right-radius{
+    border-bottom-right-radius: 10px;
+}
+/*.margin_left{
+    margin-left: -55px;
+}*/
+.card-1{
+    z-index: 6;
+}
+.card-2{
+    z-index: 5;
+}
+.card-3{
+    z-index: 4;
+}
+.card-4{
+    z-index: 3;
+}
+.card-5{
+    z-index: 2;
+}
